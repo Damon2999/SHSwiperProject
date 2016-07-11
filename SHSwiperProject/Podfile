@@ -1,0 +1,8 @@
+# Uncomment this line to define a global platform for your project
+
+target 'SHSwiperProject' do
+pod "Masonry"
+end
+
+
+
