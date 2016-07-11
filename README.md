@@ -3,6 +3,7 @@ nav滑动切换viewcontroller
 
 
  用法：把自己的controller继承SHSwipeBaseController就完事了。。。
+ 
 第一种用法，直接添加自定义的Viewcontroller
     Test0ViewController *vc0 = [Test0ViewController new];
     Test1ViewController *vc1 = [Test1ViewController new];
