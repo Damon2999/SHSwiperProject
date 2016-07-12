@@ -38,6 +38,11 @@
    
     
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.navigationController.navigationBar.topItem.titleView = self.navigationView;
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -306,7 +311,7 @@
 
     if (!_navigationView) {
         _navigationView = [[UIView alloc]initWithFrame:CGRectMake(0,0,SHScreenWidth,SHNaviBarH)];
-        self.navigationController.navigationBar.topItem.titleView = _navigationView;
+        
     }
     return _navigationView;
 
