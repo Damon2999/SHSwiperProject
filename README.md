@@ -1,10 +1,12 @@
 # SHSwiperProject
 nav滑动切换viewcontroller
 
+![image](https://github.com/Damon2999/SHSwiperProject/blob/master/readme.gif)
 
- 用法：把自己的controller继承SHSwipeBaseController就完事了。。。
+ 用法：把自己的controller继承SHSwipeBaseController就可以了(这个controller可以只是个空壳容器，不会影响原工程的baseController基类继承关系，因为后面添加的子Controller才是真正的主体内容)。
  
 第一种用法，直接添加自定义的Viewcontroller
+
     Test0ViewController *vc0 = [Test0ViewController new];
     
     Test1ViewController *vc1 = [Test1ViewController new];
