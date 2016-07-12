@@ -19,7 +19,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    self.contentDatas = @[@"第一个table",@"第二个table",@"第三个table"];
+    self.contentDatas = @[@"One",@"Tow",@"Three"];
+    self.tableDelegate = self;
     
     
     
@@ -34,5 +35,54 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80   ;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20   ;
+    
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *cellid = @"cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    if (!cell ) {
+        cell = [UITableViewCell new];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+    cell.textLabel.text = [NSString stringWithFormat:@"第%ld个tableView",tableView.tag];
+    
+    return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    switch (tableView.tag) {
+        case 0:
+            self.buttonSize = CGSizeMake(80, 20);
+            break;
+        case 1:
+            self.buttonSize = CGSizeMake(120, 40);
+            break;
+        case 2:
+            self.buttonSize = CGSizeMake(150, 60);
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+}
+
 
 @end
